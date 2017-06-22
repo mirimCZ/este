@@ -4,7 +4,8 @@ import { Box } from '../../common/components';
 
 const HeroesPage = () => (
   <Box>
-    Yo heroes test
+    <h1>BROKEN</h1>
+    test test
   </Box>
 );
 

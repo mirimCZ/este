@@ -20,6 +20,7 @@ import SignInPage from '../auth/SignInPage';
 import TodosPage from '../todos/TodosPage';
 import UsersPage from '../users/UsersPage';
 import HeroesPage from '../heroes/HeroesPage';
+import HeroesBrokenPage from '../heroes/HeroesBrokenPage';
 
 // Custom route to require viewer aka authenticated user.
 const AuthorizedRoute = () => {};
@@ -55,19 +56,19 @@ const routeConfig = makeRouteConfig(
         fetch('https://gateway.marvel.com:443/v1/public/characters?apikey=5ee9ebc6e58d747fa165a039cf3ca442')
           .then(response => response.json())
           .then(json => {
-            console.log('test it');
+            console.log('test');
             console.log(json)
           })
       )}
     />
     <Route
       path="heroes-broken"
-      Component={HeroesPage}
+      Component={HeroesBrokenPage}
       getData={() => (
         fetch('http://localhost:3004/api/heroes')
           .then(response => response.json())
           .then(json => {
-            console.log('test it');
+            console.log('test broken');
             console.log(json)
           })
       )}
