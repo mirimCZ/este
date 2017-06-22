@@ -45,6 +45,7 @@ const Header = ({ viewer }: HeaderProps) => (
     <HeaderLink to="/intl" message={linksMessages.intl} />
     <HeaderLink to="/offline" message={linksMessages.offline} />
     <HeaderLink to="/me" message={linksMessages.me} />
+    <HeaderLink to="/heroes" message={linksMessages.heroes} />
     {!viewer && <HeaderLink to="/signin" message={linksMessages.signIn} />}
   </Box>
 );

@@ -18,6 +18,7 @@ import SettingsPage from '../me/SettingsPage';
 import SignInPage from '../auth/SignInPage';
 import TodosPage from '../todos/TodosPage';
 import UsersPage from '../users/UsersPage';
+import HeroesPage from '../heroes/HeroesPage';
 
 // Custom route to require viewer aka authenticated user.
 const AuthorizedRoute = () => {};
@@ -46,6 +47,17 @@ const routeConfig = makeRouteConfig(
     <Route path="offline" Component={OfflinePage} />
     <Route path="signin" Component={SignInPage} />
     <Route path="todos" Component={TodosPage} />
+    <Route
+      path="heroes"
+      Component={HeroesPage}
+      getData={() => (
+        fetch('https://gateway.marvel.com:443/v1/public/characters?apikey=5ee9ebc6e58d747fa165a039cf3ca442')
+          .then(response => response.json())
+          .then(json => {
+            console.log(json)
+          })
+      )}
+    />
     <Route
       path="users"
       Component={UsersPage}
