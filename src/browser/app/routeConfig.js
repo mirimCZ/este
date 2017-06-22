@@ -5,6 +5,7 @@ import React from 'react';
 import queryFirebase from './queryFirebase';
 import { makeRouteConfig, Route } from 'found/lib/jsx';
 import { onUsersPresence } from '../../common/users/actions';
+import fetch from 'isomorphic-fetch'
 
 // Pages
 import App from './App';
@@ -54,6 +55,19 @@ const routeConfig = makeRouteConfig(
         fetch('https://gateway.marvel.com:443/v1/public/characters?apikey=5ee9ebc6e58d747fa165a039cf3ca442')
           .then(response => response.json())
           .then(json => {
+            console.log('test it');
+            console.log(json)
+          })
+      )}
+    />
+    <Route
+      path="heroes-broken"
+      Component={HeroesPage}
+      getData={() => (
+        fetch('http://localhost:3004/api/heroes')
+          .then(response => response.json())
+          .then(json => {
+            console.log('test it');
             console.log(json)
           })
       )}

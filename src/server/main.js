@@ -6,6 +6,9 @@ import frontend from './frontend';
 
 const app = express();
 
+app.get('/api/heroes', (req, res) => {
+  return res.json({ data: 'Lorem ipsum' })
+})
 app.use(frontend);
 app.get('*', errorHandler);
 

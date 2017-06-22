@@ -50,6 +50,10 @@ const LinkMessages = defineMessages({
     defaultMessage: 'Heroes',
     id: 'app.links.heroes',
   },
+  heroesBroken: {
+    defaultMessage: 'Heroes Broken',
+    id: 'app.links.heroesBroken',
+  },
 });
 
 export default LinkMessages;

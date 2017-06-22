@@ -39,13 +39,8 @@ const Header = ({ viewer }: HeaderProps) => (
     paddingHorizontal={0.5}
   >
     <HeaderLink exact to="/" message={linksMessages.home} />
-    <HeaderLink to="/users" message={linksMessages.users} />
-    <HeaderLink to="/todos" message={linksMessages.todos} />
-    <HeaderLink to="/fields" message={linksMessages.fields} />
-    <HeaderLink to="/intl" message={linksMessages.intl} />
-    <HeaderLink to="/offline" message={linksMessages.offline} />
-    <HeaderLink to="/me" message={linksMessages.me} />
     <HeaderLink to="/heroes" message={linksMessages.heroes} />
+    <HeaderLink to="/heroes-broken" message={linksMessages.heroesBroken} />
     {!viewer && <HeaderLink to="/signin" message={linksMessages.signIn} />}
   </Box>
 );
